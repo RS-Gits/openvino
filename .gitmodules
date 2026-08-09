@@ -1,6 +1,6 @@
 [submodule "src/plugins/intel_cpu/thirdparty/onednn"]
 	path = src/plugins/intel_cpu/thirdparty/onednn
-	url = https://github.com/openvinotoolkit/oneDNN.git
+	url = https://github.com/Harishmcw/oneDNN
 	ignore = dirty
 [submodule "thirdparty/xbyak"]
 	path = thirdparty/xbyak
@@ -65,7 +65,7 @@
 	url = https://github.com/google/snappy.git
 [submodule "ARMComputeLibrary"]
 	path = src/plugins/intel_cpu/thirdparty/ComputeLibrary
-	url = https://github.com/ARM-software/ComputeLibrary.git
+	url = https://github.com/Harishmcw/ComputeLibrary.git
 	ignore = dirty
 [submodule "src/plugins/intel_cpu/thirdparty/mlas"]
 	path = src/plugins/intel_cpu/thirdparty/mlas
@@ -87,7 +87,7 @@
 	url = https://github.com/libxsmm/libxsmm.git
 [submodule "src/plugins/intel_cpu/thirdparty/kleidiai"]
 	path = src/plugins/intel_cpu/thirdparty/kleidiai
-	url = https://github.com/ARM-software/kleidiai.git
+	url = https://gitlab.arm.com/Harishmcw/kleidiai.git
 [submodule "src/plugins/intel_cpu/thirdparty/xbyak_riscv"]
 	path = src/plugins/intel_cpu/thirdparty/xbyak_riscv
 	url = https://github.com/herumi/xbyak_riscv.git
