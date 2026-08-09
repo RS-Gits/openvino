@@ -144,6 +144,10 @@ jobs:
           # For getting rid of SSL issues during model downloading for unit tests
           python3 -m pip install certifi
 
+      - name: Install scons (required for ARM Compute Library build)
+        if: ${{ inputs.target-arch == 'arm64' }}
+        run: python3 -m pip install scons
+
       #
       # Build
       #
@@ -177,13 +181,13 @@ jobs:
 
       - name: Configure Developer Command Prompt for Microsoft Visual C++
         uses: ilammy/msvc-dev-cmd@0b201ec74fa43914dc39ae48a89fd1d8cb592756 # v1.13.0
-        if: ${{ contains(inputs.build-variant, 'vs2022') }}
+        if: ${{ inputs.target-arch != 'arm64' && contains(inputs.build-variant, 'vs2022') }}
         with:
           toolset: "14.42" # v2022
 
       - name: Configure Developer Command Prompt for Microsoft Visual C++ for VS 2026
         uses: ilammy/msvc-dev-cmd@0b201ec74fa43914dc39ae48a89fd1d8cb592756 # v1.13.0
-        if: ${{ inputs.build-variant == 'vs2026' }}
+        if: ${{ inputs.target-arch != 'arm64' && inputs.build-variant == 'vs2026' }}
         with:
           toolset: "14.50" # v2026
 
