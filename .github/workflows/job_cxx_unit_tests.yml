@@ -57,7 +57,7 @@ jobs:
       SOURCE_COMMAND: ${{ contains(inputs.runner, 'linux') && 'source' || '.' }}
       SETUPVARS: ${{ github.workspace }}/install/${{ contains(inputs.runner, 'win') && 'setupvars.ps1' || 'setupvars.sh' }}
       # skip flaky short/long path mismatch on Win ARM64
-      GTEST_FILTER: ${{ (runner.os == 'Windows' && runner.arch == 'ARM64') && '--gtest_filter=-SanitizePathTest.valid_nested_relative_path' || '' }}
+      GTEST_FILTER: ${{ inputs.runner == 'windows-11-arm' && '--gtest_filter=-SanitizePathTest.valid_nested_relative_path' || '' }}
     steps:
       - name: Download OpenVINO artifacts (package)
         uses: akashchi/download-artifact@d59a9c15fec3fdb7c9adf09464124d00f9c11415 # main
