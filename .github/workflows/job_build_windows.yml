@@ -144,6 +144,10 @@ jobs:
           # For getting rid of SSL issues during model downloading for unit tests
           python3 -m pip install certifi
 
+      - name: Install scons (required for ARM Compute Library build)
+        if: ${{ inputs.target-arch == 'arm64' }}
+        run: python3 -m pip install scons
+
       #
       # Build
       #
