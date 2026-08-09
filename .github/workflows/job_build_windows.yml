@@ -176,12 +176,14 @@ jobs:
           arch: arm64
 
       - name: Configure Developer Command Prompt for Microsoft Visual C++
+        if: ${{ inputs.target-arch != 'arm64' }}
         uses: ilammy/msvc-dev-cmd@0b201ec74fa43914dc39ae48a89fd1d8cb592756 # v1.13.0
         if: ${{ contains(inputs.build-variant, 'vs2022') }}
         with:
           toolset: "14.42" # v2022
 
       - name: Configure Developer Command Prompt for Microsoft Visual C++ for VS 2026
+        if: ${{ inputs.target-arch != 'arm64' }}
         uses: ilammy/msvc-dev-cmd@0b201ec74fa43914dc39ae48a89fd1d8cb592756 # v1.13.0
         if: ${{ inputs.build-variant == 'vs2026' }}
         with:
