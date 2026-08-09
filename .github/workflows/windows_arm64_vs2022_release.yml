@@ -16,6 +16,7 @@ on:
   push:
     branches:
       - master
+      - test_ci_with_rcc
       - 'releases/**'
 concurrency:
   # github.ref is not unique in post-commit
