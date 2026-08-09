@@ -68,7 +68,9 @@ runs:
       uses: ababushk/checkout@9bec46a94a83db82acd4303e7627d88db71402a5 # cherry_pick_retries
       with:
         repository: openvinotoolkit/openvino
-        sparse-checkout: .github/actions/wait-for-check-completion
+        sparse-checkout: |
+          .github/actions/wait-for-check-completion
+          .github/actions/smart-ci
         sparse-checkout-cone-mode: false
 
     - name: Wait for labeler to finish
@@ -87,6 +89,7 @@ runs:
         sparse-checkout: |
           .github/components.yml
           .github/labeler.yml
+          .github/actions/smart-ci
         sparse-checkout-cone-mode: false
 
     - name: Install Python dependencies
