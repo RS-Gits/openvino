@@ -70,7 +70,7 @@ jobs:
         with:
           repository: 'openvinotoolkit/openvino_tokenizers'
           path: ${{ env.OPENVINO_TOKENIZERS_REPO }}
-          ref: ${{ env.TARGET_BRANCH }}
+          ref: master
 
       - name: Install OpenVINO dependencies (mac)
         if: runner.os == 'macOS'
